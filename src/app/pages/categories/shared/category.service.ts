@@ -10,7 +10,7 @@ import { Category } from './category.module';
 
 export class CategoryService {
 
-  private apiPath: string = 'api/category';
+  private apiPath: string = 'api/categories';
 
   constructor(private http: HttpClient) { }
 
