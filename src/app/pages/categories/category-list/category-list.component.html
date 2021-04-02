@@ -26,34 +26,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let category of categories">
             <td>
-                <strong>Lazer</strong><br>
-                <small>cinema, parque, praia, etc</small>
+                <strong>{{ category.name }}</strong><br>
+                <small>{{ category.description }}</small>
             </td>
             <td>
-                <button [routerLink]="['edit', 12]" class="btn btn-outline-info btn-sm mr-2">Editar</button>
-                <button class="btn btn-outline-danger btn-sm">Excluir</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>Lazer</strong><br>
-                <small>cinema, parque, praia, etc</small>
-            </td>
-            <td>
-                <button [routerLink]="['edit', 12]" class="btn btn-outline-info btn-sm mr-2">Editar</button>
-                <button class="btn btn-outline-danger btn-sm">Excluir</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>Lazer</strong><br>
-                <small>cinema, parque, praia, etc</small>
-            </td>
-            <td>
-                <button [routerLink]="['edit', 12]" class="btn btn-outline-info btn-sm mr-2">Editar</button>
-                <button class="btn btn-outline-danger btn-sm">Excluir</button>
+                <button [routerLink]="['edit', category.id]" class="btn btn-outline-info btn-sm mr-2">Editar</button>
+                <button (click)="deleteCategory(category.id)" class="btn btn-outline-danger btn-sm">Excluir</button>
             </td>
         </tr>
     </tbody>
